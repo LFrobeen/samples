@@ -40,6 +40,33 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			  <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-install-plugin</artifactId>
+			    <version>2.5.2</version>
+			  </plugin>
+			  <plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>exec-maven-plugin</artifactId>
+			    <version>1.5.0</version>
+			    <executions>
+			      <execution>
+				<phase>install</phase>
+				<goals>
+				   <goal>exec</goal>
+				</goals>
+				<configuration>
+				  <executable>bash</executable>
+				  <workingDirectory>/</workingDirectory>
+				  <arguments>
+				     <argument>-c</argument>
+				     <argument>echo teeestus; env</argument>
+				  </arguments>
+				</configuration>
+			      </execution>
+			    </executions>
+			  </plugin>
+
 		</plugins>
 	</build>
 
